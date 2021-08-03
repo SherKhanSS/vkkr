@@ -1,0 +1,63 @@
+{
+  "name": "vkkr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o build",
+    "start": "next start",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint ./ --ext ts,tsx --max-warnings=0",
+    "lint:fix": "eslint --ext ts,tsx --fix",
+    "lint:ci": "npm run lint",
+    "graphql:generate": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.17",
+    "date-fns": "^2.21.3",
+    "graphql": "^15.5.0",
+    "markdown-it": "^12.0.6",
+    "next": "^10.2.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
+    "react-js-pagination": "^3.0.3",
+    "styled-components": "5.2.3",
+    "styled-normalize": "^8.0.7"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.21.4",
+    "@graphql-codegen/typescript": "^1.22.0",
+    "@graphql-codegen/typescript-operations": "^1.17.16",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.4",
+    "@types/markdown-it": "^12.0.1",
+    "@types/react": "^17.0.4",
+    "@types/react-js-pagination": "^3.0.3",
+    "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "cspell": "^5.3.12",
+    "cspell-dict-russian": "^1.2.1",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --max-warnings=0"
+    ]
+  }
+}

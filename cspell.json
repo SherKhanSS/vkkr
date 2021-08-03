@@ -1,0 +1,6 @@
+{
+  "version": "0.1",
+  "language": "en,ru,javascript,typescript",
+  "import": ["@cspell/dict-ru_ru/cspell-ext.json"],
+  "words": ["nowrap", "mixins"]
+}
